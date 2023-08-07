@@ -14,6 +14,8 @@ return new class extends Migration
         Schema::create('digital_actions', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
+            $table->string("name", 255);
+            $table->string("logo", 255);
         });
     }
 

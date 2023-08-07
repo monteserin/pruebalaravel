@@ -1,5 +1,8 @@
 <?php
 
+use App\Http\Controllers\Api\BrandsController;
+use App\Http\Controllers\Api\DigitalActionsController;
+
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -17,3 +20,8 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+Route::get('/brand/{id}', [BrandsController::class, 'getById']);
+Route::get('/brand/', [BrandsController::class, 'index']);
+
+// Route::resource('brand', BrandsController::class)->except(['create', 'edit']);
