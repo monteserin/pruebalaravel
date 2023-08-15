@@ -3,6 +3,8 @@
 namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+
+use App\Models\BrandDigitalAction;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -12,8 +14,10 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        $this->call(BrandSeeder::class);
-        $this->call(DigitalActionSeeder::class);
+        $this->call(BrandsSeeder::class);
+        $this->call(DigitalActionsSeeder::class);
+        $this->call(BrandsDigitalActionsSeeder::class);
+
 
         // \App\Models\User::factory(10)->create();
 

@@ -14,11 +14,12 @@ return new class extends Migration
         Schema::create('brands_digital_actions', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
-            $table->unsignedBiginteger('brands_id')->unsigned();
-            $table->unsignedBiginteger('digitalActions_id')->unsigned();
-            $table->foreign('brands_id')->references('id')
+            $table->string('url', 255);
+            $table->unsignedBiginteger('brand_id')->unsigned();
+            $table->unsignedBiginteger('digitalAction_id')->unsigned();
+            $table->foreign('brand_id')->references('id')
                 ->on('brands')->onDelete('cascade');
-            $table->foreign('digitalActions_id')->references('id')->on('digital_actions')->onDelete('cascade');
+            $table->foreign('digitalAction_id')->references('id')->on('digital_actions')->onDelete('cascade');
         });
     }
 
@@ -27,6 +28,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('brands_digital_actions');
+        Schema::dropIfExists('brand_digital_action');
     }
 };

@@ -13,8 +13,8 @@ class BrandsController extends Controller
      */
     public function index()
     {
-        $brands = Brands::get();
-        return response()->json($brands);
+        $brand = Brands::get();
+        return response()->json($brand);
     }
 
 
@@ -42,7 +42,7 @@ class BrandsController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Brands $brands)
+    public function show(Brands $brand)
     {
         //
     }
@@ -50,7 +50,7 @@ class BrandsController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Brands $brands)
+    public function edit(Brands $brand)
     {
         //
     }
@@ -58,7 +58,7 @@ class BrandsController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Brands $brands)
+    public function update(Request $request, Brands $brand)
     {
         //
     }
@@ -66,7 +66,7 @@ class BrandsController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Brands $brands)
+    public function destroy(Brands $brand)
     {
         //
     }

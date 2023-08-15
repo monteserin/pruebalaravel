@@ -11,6 +11,6 @@ class Brands extends Model
 
     public function digitalActions()
     {
-        return $this->belongsToMany(Regions::class, 'brands_digitalActions', 'digitalActions_id', 'brands_id');
+        return $this->belongsToMany(Regions::class, 'brands_digitalActions', 'digitalAction_id', 'brand_id');
     }
 }

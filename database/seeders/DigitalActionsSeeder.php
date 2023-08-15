@@ -6,7 +6,7 @@ use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use App\Models\DigitalActions;
 
-class DigitalActionSeeder extends Seeder
+class DigitalActionsSeeder extends Seeder
 {
     /**
      * Run the database seeds.

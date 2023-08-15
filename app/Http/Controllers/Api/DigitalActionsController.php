@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
+use App\Models\BrandsDigitalActions;
 use App\Models\DigitalActions;
 use Illuminate\Http\Request;
 
@@ -13,9 +14,17 @@ class DigitalActionsController extends Controller
      */
     public function index()
     {
-        //
+        $digitalActions = DigitalActions::get();
+        return response()->json($digitalActions);
     }
 
+    public function getByBrandId($brandId)
+    {
+        $digitalActions = BrandsDigitalActions::where('brand_id', $brandId)
+            ->join('digital_actions', 'digital_actions.id', '=', 'brands_digital_actions.digitalAction_id')->get();
+
+        return response()->json($digitalActions);
+    }
     /**
      * Show the form for creating a new resource.
      */

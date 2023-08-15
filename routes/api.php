@@ -21,7 +21,9 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::get('/brand/{id}', [BrandsController::class, 'getById']);
-Route::get('/brand/', [BrandsController::class, 'index']);
+Route::get('/brands/{id}', [BrandsController::class, 'getById']);
+Route::get('/brands/', [BrandsController::class, 'index']);
+Route::get('/digital-actions/', [DigitalActionsController::class, 'index']);
+Route::get('/digital-actions/{id}', [DigitalActionsController::class, 'getByBrandId']);
 
-// Route::resource('brand', BrandsController::class)->except(['create', 'edit']);
+// Route::resource('brand', BrandController::class)->except(['create', 'edit']);

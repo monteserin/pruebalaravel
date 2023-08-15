@@ -5,9 +5,14 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class DigitalActions extends Model
+class BrandsDigitalActions extends Model
 {
     use HasFactory;
+
+    public function digitalAction()
+    {
+        return $this->belongsToMany(Regions::class, 'brand_digitalAction', 'digitalAction_id', 'brand_id');
+    }
 
     public function brand()
     {

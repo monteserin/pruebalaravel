@@ -7,14 +7,14 @@ use Illuminate\Database\Seeder;
 use App\Models\Brands;
 
 
-class BrandSeeder extends Seeder
+class BrandsSeeder extends Seeder
 {
     /**
      * Run the database seeds.
      */
     public function run(): void
     {
-        // Brands::truncate();
+        // Brand::truncate();
         Brands::create(
             [
                 'name' => 'F.C. Barcelona',
@@ -32,7 +32,7 @@ class BrandSeeder extends Seeder
         Brands::create(
             [
                 'name' => 'Kantox',
-                'logo' => 'kantox-square.png'
+                'logo' => 'kantox-square.svg'
             ]
         );
     }
